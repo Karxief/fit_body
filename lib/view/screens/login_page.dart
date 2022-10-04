@@ -35,10 +35,10 @@ class _LoginPageState extends State<LoginPage> {
                       //Kullanıcı ismi hatırlanacak ve text olarak yazdırılacak.
                       child: GradientText(
                         'Tekrar Hoşgeldin, \nSeyit! ',
-                        style: const TextStyle(fontSize: 35),
+                        style: const TextStyle(fontSize: 33),
                         gradient: LinearGradient(colors: [
                           Colors.green.shade50,
-                          Colors.green.shade400
+                          Color.fromARGB(255, 143, 187, 102)
                         ]),
                       ),
                     )),
@@ -49,31 +49,34 @@ class _LoginPageState extends State<LoginPage> {
                         )),
                 SizedBox(height: 10),
                 Expanded(flex: 1, child: PasswordTextField()),
-                Expanded(
-                  flex: 1,
-                  child: Text('Forgot Password',
+                SizedBox(height: 10),
+
+                Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                  Text('Forgot Password',
                       style: Theme.of(context).textTheme.bodyText2),
-                ),
+                ]),
                 // SizedBox(height: 5,),
                 Expanded(
                   flex: 2,
                   child: Row(
                     children: [
                       Expanded(
-                          flex: 1,
+                          flex: 3,
                           child: button_widget(
                               icon_name: FaIcon(FontAwesomeIcons.google))),
                       Expanded(
-                          flex: 1,
+                          flex: 3,
                           child: button_widget(
                             icon_name: FaIcon(FontAwesomeIcons.apple),
                           )),
+                      Expanded(flex: 1, child: SizedBox()),
                       Expanded(
-                          flex: 2,
+                          flex: 6,
                           child: Container(
+                            height: 60,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Theme.of(context).primaryColor),
+                                borderRadius: BorderRadius.circular(30),
+                                color: Theme.of(context).cardColor),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -88,17 +91,26 @@ class _LoginPageState extends State<LoginPage> {
                     ],
                   ),
                 ),
+
                 Expanded(
-                    flex: 1,
+                    flex: 2,
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           "Don't you have an account?",
                           style: Theme.of(context).textTheme.bodyText1,
                         ),
-                        TextButton(onPressed: () {}, child: Text('Sign in'))
+                        GestureDetector(
+                          onTap: () {},
+                          child: Text(
+                            '   Sign in',
+                            style: Theme.of(context).textTheme.headline2,
+                          ),
+                        )
                       ],
-                    ))
+                    )),
               ],
             ),
           )),

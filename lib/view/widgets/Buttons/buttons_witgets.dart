@@ -11,6 +11,7 @@ class button_widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 60,
       decoration: BoxDecoration(
           shape: BoxShape.circle, color: Theme.of(context).primaryColor),
       child: IconButton(
