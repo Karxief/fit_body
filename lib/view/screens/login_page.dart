@@ -1,11 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:fit_body/view/widgets/EmailTextField_widgets.dart';
-import 'package:fit_body/view/widgets/PasswordTextfield_witget.dart';
 import 'package:fit_body/view/widgets/backround_image_widget.dart';
+import 'package:fit_body/view/widgets/textField_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../widgets/Buttons/buttons_witgets.dart';
+import '../widgets/Buttons/accesess_buttons_widget.dart';
 import '../widgets/welcome_text.dart';
 
 class LoginPage extends StatefulWidget {
@@ -19,7 +17,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
-      const Backroundimage(),
+      const Backroundimage(backround_image: AssetImage('assets/Fitwomen.jpg')),
       Scaffold(
           backgroundColor: Colors.transparent,
           body: Container(
@@ -44,11 +42,17 @@ class _LoginPageState extends State<LoginPage> {
                     )),
                 Expanded(
                     flex: 1,
-                    child: EmailTextField(
-                        // loginpagemailcontroller: null,
-                        )),
+                    child: MyTextField(
+                      textField_icon: Icons.email, hint_text: 'Email',
+                      // loginpagemailcontroller: null,
+                    )),
                 SizedBox(height: 10),
-                Expanded(flex: 1, child: PasswordTextField()),
+                Expanded(
+                    flex: 1,
+                    child: MyTextField(
+                      textField_icon: Icons.lock,
+                      hint_text: 'Password',
+                    )),
                 SizedBox(height: 10),
 
                 Row(mainAxisAlignment: MainAxisAlignment.end, children: [
@@ -58,38 +62,7 @@ class _LoginPageState extends State<LoginPage> {
                 // SizedBox(height: 5,),
                 Expanded(
                   flex: 2,
-                  child: Row(
-                    children: [
-                      Expanded(
-                          flex: 3,
-                          child: button_widget(
-                              icon_name: FaIcon(FontAwesomeIcons.google))),
-                      Expanded(
-                          flex: 3,
-                          child: button_widget(
-                            icon_name: FaIcon(FontAwesomeIcons.apple),
-                          )),
-                      Expanded(flex: 1, child: SizedBox()),
-                      Expanded(
-                          flex: 6,
-                          child: Container(
-                            height: 60,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Theme.of(context).cardColor),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Login",
-                                  style: Theme.of(context).textTheme.headline1,
-                                ),
-                                Icon(Icons.arrow_right)
-                              ],
-                            ),
-                          ))
-                    ],
-                  ),
+                  child: accesess_buttons(button_text: 'Login'),
                 ),
 
                 Expanded(

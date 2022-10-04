@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:fit_body/theme/theme.dart';
 import 'package:fit_body/view/screens/login_page.dart';
+import 'package:fit_body/view/screens/sign_in_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
