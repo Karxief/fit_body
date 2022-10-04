@@ -1,16 +1,19 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class Backroundimage extends StatelessWidget {
   const Backroundimage({
     Key? key,
+    required this.backround_image,
   }) : super(key: key);
-
+  final ImageProvider backround_image;
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/Fitwomen.jpg'),
+            image: backround_image,
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(Colors.black26, BlendMode.darken)),
       ),
