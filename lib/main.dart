@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+import 'package:fit_body/theme/theme.dart';
 import 'package:fit_body/view/screens/login_page.dart';
 import 'package:flutter/material.dart';
 
@@ -13,17 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-          iconTheme: IconThemeData(size: 40),
-          primaryColor: Color.fromARGB(104, 241, 236, 236),
-          inputDecorationTheme: const InputDecorationTheme(
-              hintStyle: TextStyle(color: Colors.white)),
-          primaryTextTheme: const TextTheme(
-              bodyText1: TextStyle(color: Color.fromARGB(255, 219, 213, 213))),
-          textTheme: const TextTheme(
-            bodyText1: TextStyle(color: Color.fromARGB(255, 173, 223, 145)),
-          )),
-      home: const LoginPage(),
+      theme: appThemeData,
+      home: LoginPage(),
     );
   }
 }
