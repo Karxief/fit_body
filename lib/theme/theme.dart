@@ -7,13 +7,18 @@ final appThemeData = ThemeData(
     textTheme: const TextTheme(
         headline1: TextStyle(
             fontFamily: 'Poppins',
-            color: Color.fromARGB(255, 0, 0, 0),
-            fontSize: 19,
-            fontWeight: FontWeight.normal),
+            color: Colors.white,
+            fontSize: 35,
+            fontWeight: FontWeight.bold),
         headline2: TextStyle(
             fontFamily: 'Poppins',
             color: Colors.white,
             fontSize: 15,
+            fontWeight: FontWeight.bold),
+        headline3: TextStyle(
+            fontFamily: 'Poppins',
+            color: Colors.black,
+            fontSize: 19,
             fontWeight: FontWeight.bold),
         bodyText1: TextStyle(
             fontFamily: 'Poppins',

@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:fit_body/theme/theme.dart';
+import 'package:fit_body/view/screens/forgot_password_page.dart';
 import 'package:fit_body/view/screens/login_page.dart';
-import 'package:fit_body/view/screens/sign_in_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +17,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: appThemeData,
-      home: LoginPage(),
+      home: ForgotPasswordPage(),
     );
   }
 }
+
+// Forgot password page
+// Butonların navigasyon işlemleri yapılacak.
