@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:fit_body/view/screens/forgot_password_page.dart';
+import 'package:fit_body/view/screens/sign_in_page.dart';
 import 'package:fit_body/view/widgets/backround_image_widget.dart';
 import 'package:fit_body/view/widgets/textField_widgets.dart';
 import 'package:flutter/material.dart';
@@ -55,10 +57,19 @@ class _LoginPageState extends State<LoginPage> {
                     )),
                 SizedBox(height: 10),
 
-                Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                  Text('Forgot Password',
-                      style: Theme.of(context).textTheme.bodyText2),
-                ]),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return ForgotPasswordPage();
+                    }));
+                  },
+                  child:
+                      Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                    Text('Forgot Password',
+                        style: Theme.of(context).textTheme.bodyText2),
+                  ]),
+                ),
                 // SizedBox(height: 5,),
                 Expanded(
                   flex: 2,
@@ -72,13 +83,18 @@ class _LoginPageState extends State<LoginPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Don't you have an account?",
+                          "Not a member?",
                           style: Theme.of(context).textTheme.bodyText1,
                         ),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return SignInPage();
+                            }));
+                          },
                           child: Text(
-                            '   Sign in',
+                            '  Sign in',
                             style: Theme.of(context).textTheme.headline2,
                           ),
                         )

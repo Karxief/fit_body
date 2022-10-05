@@ -15,7 +15,7 @@ class Backroundimage extends StatelessWidget {
         image: DecorationImage(
             image: backround_image,
             fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(Colors.black26, BlendMode.darken)),
+            colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken)),
       ),
     );
   }

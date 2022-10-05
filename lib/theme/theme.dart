@@ -18,7 +18,7 @@ final appThemeData = ThemeData(
         headline3: TextStyle(
             fontFamily: 'Poppins',
             color: Colors.black,
-            fontSize: 19,
+            fontSize: 20,
             fontWeight: FontWeight.bold),
         bodyText1: TextStyle(
             fontFamily: 'Poppins',

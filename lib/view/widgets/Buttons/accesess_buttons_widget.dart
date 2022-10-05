@@ -36,7 +36,7 @@ class accesess_buttons extends StatelessWidget {
                 children: [
                   Text(
                     button_text,
-                    style: Theme.of(context).textTheme.headline1,
+                    style: Theme.of(context).textTheme.headline3,
                   ),
                   Icon(Icons.arrow_right)
                 ],

@@ -1,4 +1,5 @@
 // ignore_for_file: prefer_const_constructors
+import 'package:fit_body/view/screens/sign_in_page.dart';
 import 'package:fit_body/view/widgets/textField_widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -62,7 +63,12 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       style: Theme.of(context).textTheme.bodyText1,
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return SignInPage();
+                        }));
+                      },
                       child: Text(
                         '   Sign in',
                         style: Theme.of(context).textTheme.headline2,

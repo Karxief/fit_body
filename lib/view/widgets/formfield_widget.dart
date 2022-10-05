@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:fit_body/view/screens/login_page.dart';
+import 'package:fit_body/view/screens/sign_in_page.dart';
 import 'package:fit_body/view/widgets/Buttons/accesess_buttons_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -65,11 +67,16 @@ class Sign_in_FormField extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Have you already an account?",
+                      "I am already a member!",
                       style: Theme.of(context).textTheme.bodyText1,
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return LoginPage();
+                        }));
+                      },
                       child: Text(
                         '   Log in',
                         style: Theme.of(context).textTheme.headline2,
