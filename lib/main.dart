@@ -2,6 +2,7 @@
 import 'dart:developer';
 
 import 'package:fit_body/theme/theme.dart';
+import 'package:fit_body/view/screens/age_page.dart';
 import 'package:fit_body/view/screens/forgot_password_page.dart';
 import 'package:fit_body/view/screens/login_page.dart';
 import 'package:fit_body/view/screens/sign_in_page.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: appThemeData,
-      home: LoginPage(),
+      home: AgePage(),
     );
   }
 }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 final appThemeData = ThemeData(
     iconTheme: const IconThemeData(size: 40),
     cardColor: const Color(0xFFA8D36F),
-    primaryColor: const Color.fromARGB(157, 134, 121, 121),
+    primaryColor: const Color.fromARGB(123, 70, 62, 62),
     textTheme: const TextTheme(
         headline1: TextStyle(
             fontFamily: 'Poppins',
