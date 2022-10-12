@@ -4,6 +4,7 @@ import 'dart:developer';
 import 'package:fit_body/theme/theme.dart';
 import 'package:fit_body/view/screens/age_page.dart';
 import 'package:fit_body/view/screens/forgot_password_page.dart';
+import 'package:fit_body/view/screens/gender_page.dart';
 import 'package:fit_body/view/screens/login_page.dart';
 import 'package:fit_body/view/screens/sign_in_page.dart';
 import 'package:flutter/material.dart';
