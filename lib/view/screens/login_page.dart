@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:fit_body/view/screens/forgot_password_page.dart';
+import 'package:fit_body/view/screens/onboarding_screen.dart';
 import 'package:fit_body/view/screens/sign_in_page.dart';
 import 'package:fit_body/view/widgets/backround_image_widget.dart';
 import 'package:fit_body/view/widgets/textField_widgets.dart';
@@ -73,7 +74,15 @@ class _LoginPageState extends State<LoginPage> {
                 // SizedBox(height: 5,),
                 Expanded(
                   flex: 2,
-                  child: accesess_buttons(button_text: 'Login'),
+                  child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) {
+                            return OnBoardingScreen();
+                          },
+                        ));
+                      },
+                      child: accesess_buttons(button_text: 'Login')),
                 ),
 
                 Expanded(
