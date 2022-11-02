@@ -23,58 +23,53 @@ class _LoginPageState extends State<LoginPage> {
       const Backroundimage(backround_image: AssetImage('assets/Fitwomen.jpg')),
       Scaffold(
           backgroundColor: Colors.transparent,
-          body: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Expanded(
-                    flex: 8,
-                    child: Align(
-                      alignment: const AlignmentDirectional(-0.5, 0.35),
+          body: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Align(
+                    heightFactor: 5,
+                    alignment: const AlignmentDirectional(-0.5, 0.35),
 
-                      //Kullanıcı ismi hatırlanacak ve text olarak yazdırılacak.
-                      child: GradientText(
-                        'Tekrar Hoşgeldin, \nSeyit! ',
-                        style: const TextStyle(fontSize: 33),
-                        gradient: LinearGradient(colors: [
-                          Colors.green.shade50,
-                          Color.fromARGB(255, 143, 187, 102)
+                    //Kullanıcı ismi hatırlanacak ve text olarak yazdırılacak.
+                    child: GradientText(
+                      'Tekrar Hoşgeldin, \nSeyit! ',
+                      style: const TextStyle(fontSize: 38),
+                      gradient: LinearGradient(colors: [
+                        Colors.green.shade50,
+                        Color.fromARGB(255, 143, 187, 102)
+                      ]),
+                    ),
+                  ),
+                  MyTextField(
+                    textField_icon: Icons.email, hint_text: 'Email',
+                    // loginpagemailcontroller: null,
+                  ),
+                  SizedBox(height: 10),
+                  MyTextField(
+                    textField_icon: Icons.lock,
+                    hint_text: 'Password',
+                  ),
+                  SizedBox(height: 10),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return ForgotPasswordPage();
+                      }));
+                    },
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text('Forgot Password',
+                              style: Theme.of(context).textTheme.bodyText2),
                         ]),
-                      ),
-                    )),
-                Expanded(
-                    flex: 1,
-                    child: MyTextField(
-                      textField_icon: Icons.email, hint_text: 'Email',
-                      // loginpagemailcontroller: null,
-                    )),
-                SizedBox(height: 10),
-                Expanded(
-                    flex: 1,
-                    child: MyTextField(
-                      textField_icon: Icons.lock,
-                      hint_text: 'Password',
-                    )),
-                SizedBox(height: 10),
-
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return ForgotPasswordPage();
-                    }));
-                  },
-                  child:
-                      Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                    Text('Forgot Password',
-                        style: Theme.of(context).textTheme.bodyText2),
-                  ]),
-                ),
-                // SizedBox(height: 5,),
-                Expanded(
-                  flex: 2,
-                  child: GestureDetector(
+                  ),
+                  SizedBox(height: 10),
+                  GestureDetector(
                       onTap: () {
                         Navigator.push(context, MaterialPageRoute(
                           builder: (context) {
@@ -83,33 +78,31 @@ class _LoginPageState extends State<LoginPage> {
                         ));
                       },
                       child: accesess_buttons(button_text: 'Login')),
-                ),
-
-                Expanded(
-                    flex: 2,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Not a member?",
-                          style: Theme.of(context).textTheme.bodyText1,
+                  SizedBox(height: 50),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Not a member?",
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return SignInPage();
+                          }));
+                        },
+                        child: Text(
+                          '  Sign in',
+                          style: Theme.of(context).textTheme.headline2,
                         ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                              return SignInPage();
-                            }));
-                          },
-                          child: Text(
-                            '  Sign in',
-                            style: Theme.of(context).textTheme.headline2,
-                          ),
-                        )
-                      ],
-                    )),
-              ],
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
           )),
     ]);

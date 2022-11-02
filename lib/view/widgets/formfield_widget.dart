@@ -15,11 +15,15 @@ class Sign_in_FormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Expanded(
-          child: Align(
-            alignment: const AlignmentDirectional(-0.5, 0.35),
+    const double height = 10;
+
+    return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      child: Column(
+        children: [
+          Align(
+            heightFactor: 5,
+            alignment: const AlignmentDirectional(-0.5, 0.45),
             child: GradientText(
               'Bilgilerini gir,\naramıza katıl! ',
               style: const TextStyle(fontSize: 33),
@@ -29,64 +33,58 @@ class Sign_in_FormField extends StatelessWidget {
               ]),
             ),
           ),
-        ),
-        Expanded(
-            child: Column(
-          children: [
-            Expanded(
-                flex: 1,
-                child: MyTextField(
-                  textField_icon: Icons.account_circle_sharp,
-                  hint_text: 'Full Name',
-                  // loginpagemailcontroller: null,
-                )),
-            Expanded(
-                flex: 1,
-                child: MyTextField(
-                  textField_icon: Icons.email, hint_text: 'Email',
-                  // loginpagemailcontroller: null,
-                )),
-            Expanded(
-                flex: 1,
-                child: MyTextField(
-                  textField_icon: Icons.lock, hint_text: 'Password',
-                  // loginpagemailcontroller: null,
-                )),
-            Expanded(
-                flex: 1,
-                child: MyTextField(
-                  textField_icon: Icons.lock,
-                  hint_text: 'Password Confirm',
-                  // loginpagemailcontroller: null,
-                )),
-            Expanded(flex: 2, child: accesess_buttons(button_text: 'Sign Up')),
-            Expanded(
-                flex: 1,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "I am already a member!",
-                      style: Theme.of(context).textTheme.bodyText1,
+          Column(
+            children: [
+              MyTextField(
+                textField_icon: Icons.account_circle_sharp,
+                hint_text: 'Full Name',
+                // loginpagemailcontroller: null,
+              ),
+              SizedBox(height: height),
+              MyTextField(
+                textField_icon: Icons.email, hint_text: 'Email',
+                // loginpagemailcontroller: null,
+              ),
+              SizedBox(height: height),
+              MyTextField(
+                textField_icon: Icons.lock, hint_text: 'Password',
+                // loginpagemailcontroller: null,
+              ),
+              SizedBox(height: height),
+              MyTextField(
+                textField_icon: Icons.lock,
+                hint_text: 'Password Confirm',
+                // loginpagemailcontroller: null,
+              ),
+              SizedBox(height: height),
+              accesess_buttons(button_text: 'Sign Up'),
+              SizedBox(height: height + 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "I am already a member!",
+                    style: Theme.of(context).textTheme.bodyText1,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return LoginPage();
+                      }));
+                    },
+                    child: Text(
+                      '   Log in',
+                      style: Theme.of(context).textTheme.headline2,
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return LoginPage();
-                        }));
-                      },
-                      child: Text(
-                        '   Log in',
-                        style: Theme.of(context).textTheme.headline2,
-                      ),
-                    )
-                  ],
-                )),
-          ],
-        )),
-      ],
+                  )
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

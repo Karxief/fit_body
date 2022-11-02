@@ -34,10 +34,10 @@ class _WeightPageState extends State<WeightPage> {
                 Padding(
                   padding: const EdgeInsets.only(top: 90, bottom: 30),
                   child: WheelSlider(
-                    lineColor: Colors.white,
-                    pointerColor: Colors.white,
+                    lineColor: const Color(0xFFA8D36F),
+                    pointerColor: const Color(0xFFA8D36F),
                     isVibrate: false,
-                    perspective: 0.008,
+                    perspective: 0.004,
                     totalCount: 150,
                     initValue: 50,
                     onValueChanged: (val) {

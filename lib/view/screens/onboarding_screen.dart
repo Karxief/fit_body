@@ -1,5 +1,6 @@
 import 'package:fit_body/view/screens/age_page.dart';
 import 'package:fit_body/view/screens/gender_page.dart';
+import 'package:fit_body/view/screens/info_page.dart';
 import 'package:fit_body/view/screens/weight_page.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -12,7 +13,7 @@ class OnBoardingScreen extends StatefulWidget {
 }
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
-  List<Widget> screens = [AgePage(), GenderPage(), WeightPage()];
+  List<Widget> screens = [AgePage(), GenderPage(), WeightPage(), InfoPage()];
   PageController _controller = PageController();
 
   @override
@@ -25,13 +26,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             controller: _controller,
             children: screens,
           ),
-          Container(
-            alignment: Alignment(0, 0.85),
-            child: SmoothPageIndicator(
-              controller: _controller,
-              count: screens.length,
-              effect: SlideEffect(
-                activeDotColor: Theme.of(context).cardColor,
+          Center(
+            child: Container(
+              padding: EdgeInsets.only(top: 680),
+              child: SmoothPageIndicator(
+                controller: _controller,
+                count: screens.length,
+                effect: ExpandingDotsEffect(
+                    dotHeight: 5,
+                    activeDotColor: Theme.of(context).cardColor,
+                    dotColor: Colors.white12),
               ),
             ),
           )
